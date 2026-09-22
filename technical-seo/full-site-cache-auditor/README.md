@@ -1,110 +1,50 @@
-# Full Site Cache Auditor (Cache & CDN Edition)
+# Full Site Cache Auditor
 
-Runs 54 real cache, CDN, and DNS checks against a site and reports each one
-separately: Cache-Control directives, CDN and edge-cache detection,
-provider-specific cache headers, DNS TTL behavior, conditional requests,
-cache security risks, and more.
+![Full Site Cache Auditor screenshot](promo/linkedin-post.png)
 
-## Three things ruled out before writing any code for them
+A free Chrome extension that runs 54 real checks on your site's caching, CDN, and DNS setup, and reports each one on its own.
 
-- **No Early Hints (HTTP 103) detection.** Informational HTTP responses are
-  consumed by the browser's own network stack and never exposed to
-  JavaScript's `fetch()` at all. This is a platform limitation, confirmed
-  against the Fetch specification, not something a cleverer check could
-  work around.
-- **No Cloudflare Page Rules detection.** No response header reveals which
-  rule fired for a request. There is nothing to observe from outside.
-- **No deep Service Worker inspection** (Cache Storage API contents,
-  service worker update staleness). Checking those needs executing script
-  inside the live page rather than fetching from the background, a
-  different and more invasive permission model than every other check
-  here. Only presence-level checks (does a service worker or manifest
-  exist) are included.
+## Why this matters
 
-## A real signal worth naming
+Caching problems are hard to spot by hand. A missing Cache-Control header, a CDN that is not actually caching your pages, or a DNS setup that adds delay, these things quietly slow your site down and can hurt both user experience and rankings. This tool checks all of it at once and tells you exactly where the issues are.
 
-Cloudflare's Tiered Cache (their version of an origin shield) is genuinely
-detectable: it sends a `cf-placement` header confirming whether a request
-was served from an upper-tier cache. This was verified live against a real
-Cloudflare-fronted site before being written, rather than assumed.
+## What it checks
 
-## The 54 checks
+The 54 checks cover several areas:
 
-**HTTP Cache Headers & Directives**: Cache-Control Directive Auditor,
-Expires Header Checker, ETag Presence & Format Checker, Last-Modified
-Header Checker, Vary Header Auditor, Cache-Control + Cookie Conflict
-Detector, Stale-While-Revalidate / Stale-If-Error Checker, Immutable
-Directive Checker, Age Header Inspector, Legacy Pragma Header Checker
+- HTTP cache headers and directives, like Cache-Control, Expires, and ETag
+- CDN and edge cache detection, including which provider you are using
+- Provider specific headers for Fastly, Akamai, Cloudflare, Vercel, and Netlify
+- DNS caching and TTL behavior
+- Static asset caching for images, fonts, and scripts
+- HTML and dynamic page cache safety
+- Browser side caching, including service workers and PWA setup
+- Cache security risks, like cache poisoning
+- Cache performance and timing
+- Platform specific detection for WordPress, Varnish, Nginx, and Apache
+- Resource hints like preload and preconnect
+- AMP and signed exchange support
 
-**CDN & Edge Cache Detection**: CDN Cache Status Header Checker, CDN
-Provider Detector, Edge Cache Hit-Ratio Sampler, Multi-Layer CDN Detector
+## How to install
 
-**Provider-Specific Cache Headers**: Fastly Surrogate-Control Checker,
-Akamai Edge-Control Checker, Cloudflare Tiered Cache Detector, Vercel Edge
-Cache Status Checker, Netlify Edge Cache Status Checker
-
-**DNS Caching**: DNS TTL Auditor, DNS Resolution Consistency Sampler
-
-**Static Asset Caching**: Static Asset Cache Duration Checker,
-Cache-Busting Filename Checker, Font File Cache Checker, Image Cache
-Checker, Third-Party Script Cache Checker
-
-**HTML & Dynamic Page Cache Safety**: HTML Cache-Control Sanity Checker,
-Full-Page Cache Detector, Personalized-Content Cache Leak Flag
-
-**Compression & Vary Consistency**: Compression & Vary Consistency Checker
-
-**Browser-Side Caching**: Service Worker Presence Checker, Web App
-Manifest / PWA Cache Checker, Legacy AppCache Detector
-
-**Cache Security Risks**: Unkeyed Header Cache-Poisoning Risk Flag, Web
-Cache Deception Risk Flag, Cache Key Normalization Checker
-
-**Cache Performance & Timing**: Cache Hit Latency Sampler, TTFB
-Consistency Checker
-
-**Platform-Specific Detection**: WordPress Cache Plugin Detector, Varnish
-Detector, Nginx/Apache Cache Module Detector
-
-**Compliance & Edge Cases**: 404/Error Page Cache Checker, Redirect Cache
-Checker, API/JSON Endpoint Cache Leak Checker, robots.txt/sitemap Cache
-Checker
-
-**Resource Hints**: Preload/Prefetch Tag & Header Checker, Preconnect
-Usage Checker, Client Hints + Vary Consistency Checker
-
-**Range Requests & Streaming**: Range Request Support Checker, Partial
-Content Cache Correctness Checker
-
-**AMP / Signed Exchanges**: AMP Cache Eligibility Checker, Signed HTTP
-Exchange (SXG) Detector
-
-**Invalidation**: Cache-Tag / Surrogate-Key Header Checker, Exposed Purge
-Endpoint Flag
-
-## Install
-
-1. Unzip the folder somewhere on your computer.
-2. Open `chrome://extensions` in Chrome.
-3. Turn on **Developer mode** (top-right toggle).
-4. Click **Load unpacked** and select the unzipped
-   `full-site-cache-auditor` folder.
-5. The icon appears in your toolbar, pin it for easy access.
+1. Download the folder and unzip it on your computer.
+2. Open a new tab in Chrome and go to chrome://extensions
+3. Turn on Developer mode, the toggle is in the top right corner.
+4. Click Load unpacked and select the full-site-cache-auditor folder.
+5. The icon will show up in your toolbar. Pin it so it is easy to find.
 
 ## How it works
 
-- **Gather phase**: the homepage is fetched twice (a moment apart, to
-  observe Age header progression and cache hit-ratio behavior), plus
-  robots.txt, sitemap.xml, and up to 15 internal pages linked from the
-  homepage, all shared across every check rather than re-fetched per check.
-- **Edge cache hit-ratio sampling is a real measurement**, not a guess: the
-  same URL is fetched twice a little over a second apart, and the actual
-  cache-status headers from both requests are compared.
-- **A full report opens in its own tab** (not just the popup), with a
-  sidebar organized by category and live progress while a scan is still
-  running.
-- **Export**: results export as a real `.xlsx` file or a styled PDF report.
+The tool fetches your homepage, robots.txt, sitemap.xml, and up to 15 internal pages once, then runs every check against that same data instead of fetching things over and over. A full report opens in its own tab with everything organized by category. You can export the results as an Excel file or a styled PDF report.
 
-## Language
+## Good to know
 
-English only.
+This tool works in English only. A few things are left out on purpose because there is no reliable way to check them from a browser extension, like Early Hints detection and Cloudflare Page Rules, since neither exposes anything a script can actually read.
+
+## Support
+
+If you run into a bug or have a question, reach out through [github.com/mmrahmanbappi](https://github.com/mmrahmanbappi).
+
+## License
+
+All rights reserved. See [LICENSE](LICENSE). This software is proprietary. The source code may not be copied, modified, or shared without permission.
