@@ -1,78 +1,45 @@
 # Crawl Budget Waste Finder
 
-Find every faceted or parameter URL on a site that's quietly wasting crawl
-budget — sort/filter combinations, tracking params, session IDs — and see
-which of them actually have a real defense (canonical, noindex, robots.txt)
-versus which ones a crawler is free to index as duplicate content.
+![Crawl Budget Waste Finder screenshot](promo/linkedin-post.png)
 
-## Features
+A free Chrome extension that finds URLs on your site quietly wasting your crawl budget, things like sort filters, tracking links, and session IDs.
 
-| Feature | Details |
-|---|---|
-| No URL entry | Detects the site from whatever tab is active — click the icon and go |
-| Full-site scan | One click crawls up to **5,000 pages** on the current site |
-| Parameter classification | Buckets every parameterized URL as tracking, sort/filter, or pagination |
-| Protection check | Cross-checks each one against its canonical tag, meta robots, and robots.txt |
-| Waste score | One line: what percent of discovered URLs are unprotected duplicates |
-| Rendered-mode fallback | Falls back to a hidden tab (real JS execution) for client-rendered (SPA) pages that return no links on a plain fetch |
-| Anti-bot detection | Flags pages blocked by Cloudflare-style challenges separately, instead of silently miscounting them |
-| Runs in the background | Closing the popup does not stop a scan in progress |
-| Auto-saved progress | Saved to your browser every few seconds, so nothing is lost |
-| Resume after closing the browser | Reopen the popup and resume, or export what was scanned so far |
-| Per-category export | A download icon on each row exports just that category as `.xlsx` |
-| Excel export | Export everything as a real `.xlsx` file |
-| PDF report | A styled summary report (stat cards, a waste-breakdown chart, and the full URL list) as a real `.pdf` file |
-| Privacy | Everything stays in your browser's local storage, nothing is sent to any server |
-| Cost | 100% free, no account, no activation code |
+## Why this matters
 
-## Install
+Search engines only spend so much time crawling your site. If a lot of that time goes to filter combinations, tracking parameters, or duplicate pages, your real content gets less attention. This tool shows you exactly which of those URLs are already protected with a canonical tag, noindex, or robots.txt rule, and which ones are wide open for a crawler to waste time on.
 
-1. Unzip the folder somewhere on your computer.
-2. Open `chrome://extensions` in Chrome.
-3. Turn on **Developer mode** (top-right toggle).
-4. Click **Load unpacked** and select the unzipped `crawl-budget-waste-finder` folder.
-5. The icon appears in your toolbar, pin it for easy access.
+## What it does
 
-## How it works
+- Detects your site automatically from the tab you have open, no typing needed
+- Scans your whole site in one click, up to 5,000 pages
+- Sorts every URL with a query string into tracking, sort or filter, or pagination
+- Checks each one against its canonical tag, meta robots tag, and robots.txt
+- Gives you a simple waste score, the percent of URLs left open for crawlers
+- Handles JavaScript heavy pages by opening a hidden tab when needed
+- Flags pages blocked by anti bot systems separately, so they do not throw off your numbers
+- Keeps running in the background even if you close the popup
+- Saves progress automatically, and lets you resume after closing the browser
+- Lets you export just one category or everything as an Excel file
+- Lets you export a full PDF report
+- Everything stays in your browser. Nothing is sent to any server
+- Completely free, no account and no activation code needed
 
-- **Crawl**: a background script fetches pages starting from the homepage and
-  follows internal links outward (breadth-first, same origin only), up to
-  5,000 pages, 8 fetches in parallel. Fetches use the browser's own cookies
-  (`credentials: 'include'`), so a site that's already let you past a
-  Cloudflare check in this browser generally lets the crawl through too.
-- **Classification**: every URL's query string is checked against known
-  patterns — `utm_*`, `gclid`, `fbclid` and similar are "tracking"; `color`,
-  `size`, `sort`, `price_min` and similar are "sort / filter"; `page`, `p`,
-  `offset` are "pagination". A URL can only land in one bucket — tracking
-  outranks sort/filter, which outranks pagination.
-- **Protection check**: for each parameterized URL, the page's
-  `<link rel="canonical">`, `<meta name="robots">`, and the site's
-  `robots.txt` (fetched once per scan) decide whether it's actually protected
-  from indexing. Protected URLs — whatever their parameter type — are counted
-  separately from unprotected ones, which is where the waste score comes from.
-- **Rendered-mode fallback**: if a page loads fine but yields zero `<a href>`
-  links, that usually means the content is client-rendered (a React/Vue shell
-  with an empty initial HTML payload). The scan opens that one URL in a
-  hidden, inactive tab, lets its JS actually run, reads the rendered DOM, and
-  continues from there — capped at 500 pages per scan since it's much heavier
-  than a plain fetch.
-- **Anti-bot detection**: a `503` status paired with a `cloudflare` server
-  header, or a "Just a moment..." challenge page in the response body, is
-  flagged as blocked-by-anti-bot rather than folded into the waste numbers —
-  the report tells you it couldn't see those pages instead of guessing.
-- **Export**: one download icon per category exports just that category's
-  URLs; "export all" exports every parameterized URL found, with its
-  category, protection status, canonical target, and HTTP status.
+## How to install
 
-## What this does *not* measure
+1. Download the folder and unzip it on your computer.
+2. Open a new tab in Chrome and go to chrome://extensions
+3. Turn on Developer mode, the toggle is in the top right corner.
+4. Click Load unpacked and select the crawl-budget-waste-finder folder.
+5. The icon will show up in your toolbar. Pin it so it is easy to find.
 
-This scores **discoverable crawl-waste surface area** — how much of the
-site's linked URL space is parameterized and left indexable — not what
-Googlebot has *actually* spent crawl budget on. Only server logs or Google
-Search Console's crawl stats show real Googlebot behavior. Treat this as
-"here's what a crawler could fall into," which is exactly the actionable
-part: it tells you what to fix in `robots.txt` or your canonical tags.
+## What this does not measure
 
-## Language
+This shows you how much of your site's linked URL space is parameterized and left open to crawlers. It does not show what Google has actually spent crawl budget on. For that, you need your server logs or Google Search Console. Think of this tool as showing you what a crawler could fall into, which is exactly what you need to fix in your robots.txt or canonical tags.
 
-English only.
+## Support
+
+If you run into a bug or have a question, reach out through [github.com/mmrahmanbappi](https://github.com/mmrahmanbappi).
+
+## License
+
+All rights reserved. See [LICENSE](LICENSE). This software is proprietary. The source code may not be copied, modified, or shared without permission.
