@@ -1,40 +1,21 @@
 # SEO Tools
 
-A collection of browser extensions for technical SEO auditing, built for 
-finding issues that standard SEO tools miss.
+Free Chrome extensions for technical SEO. Each one checks a different part of your site and shows you exactly what needs fixing.
 
-## Technical SEO
+## The tools
 
-- **[Canonical Chain Tracer](technical-seo/canonical-chain-tracer)** — 
-  Traces canonical tag chains across a site and catches loops before 
-  search engines do.
+- **[Canonical Chain Tracer](technical-seo/canonical-chain-tracer)**, checks your canonical tags and finds ones that point in circles.
+- **[Click Depth Mapper](technical-seo/click-depth-mapper)**, shows how many clicks away any page is from your homepage.
+- **[Crawl Budget Waste Finder](technical-seo/crawl-budget-waste-finder)**, finds parameter URLs quietly wasting your crawl budget.
+- **[Full Site Cache Auditor](technical-seo/full-site-cache-auditor)**, runs 54 checks on your caching, CDN, and DNS setup.
+- **[Full Site Security Auditor](technical-seo/full-site-security-auditor)**, runs 47 security, DNS, and CMS checks on your site.
+- **[Orphan Page Finder](technical-seo/orphan-page-finder)**, finds pages in your sitemap that no internal link points to.
+- **[Two MB Crawl Limit Monitor](technical-seo/two-mb-crawl-limit-monitor)**, finds pages going over Google's real crawl size limit.
 
-- **[Click Depth Mapper](technical-seo/click-depth-mapper)** — Shows how 
-  many clicks away any page is from the homepage, live while browsing or 
-  as a full-site scan.
-
-- **[Crawl Budget Waste Finder](technical-seo/crawl-budget-waste-finder)** — 
-  Finds faceted and parameter URLs quietly wasting crawl budget, and shows 
-  which ones actually have real protection in place.
-
-- **[Full Site Cache Auditor](technical-seo/full-site-cache-auditor)** — 
-  Runs 54 cache, CDN, and DNS checks against a site and reports each one 
-  separately.
-
-- **[Full Site Security Auditor](technical-seo/full-site-security-auditor)** — 
-  Runs 47 security, DNS, header, and CMS/framework checks against a site.
-
-- **[Orphan Page Finder](technical-seo/orphan-page-finder)** — Finds pages 
-  in the sitemap with no internal link pointing to them, plus weakly 
-  linked and unlisted pages.
-
-- **[Two MB Crawl Limit Monitor](technical-seo/two-mb-crawl-limit-monitor)** — 
-  Finds pages approaching or over a page-size budget, measured from actual 
-  crawler-downloaded bytes.
+Every tool is free to use, needs no account, and keeps all your data in your own browser.
 
 ## About
 
-Built and maintained by [MM Rahman Bappi](https://github.com/mmrahmanbappi), 
-a technical SEO consultant and web developer with 15 years of experience.
+Built and maintained by [MM Rahman Bappi](https://github.com/mmrahmanbappi), a technical SEO consultant and web developer with 15 years of experience.
 
 Website: https://mmseo.app/
