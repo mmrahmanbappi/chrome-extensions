@@ -1,78 +1,47 @@
 # Two MB Crawl Limit Monitor
 
-Find pages on your site that are approaching or over a page-size budget,
-measured from the exact bytes a crawler downloads, not the total weight of
-images and scripts a browser loads on top of it.
+![Two MB Crawl Limit Monitor screenshot](promo/linkedin-post.png)
 
-## A number worth getting right
+A free Chrome extension that finds pages on your site approaching or going over Google's real crawl size limit.
 
-Google's own documentation ([Search Central, "Googlebot"](https://developers.google.com/search/docs/crawling-indexing/googlebot))
-states it plainly: "Googlebot crawls the first 2MB of a supported file type,
-and the first 64MB of a PDF file. [...] Once the cutoff limit is reached,
-Googlebot stops the fetch." 2MB is not a conservative guess here — it is the
-actual, documented hard limit for HTML and other text-based files, which is
-exactly why it's this tool's default budget. PDFs get a separate, much larger
-64MB allowance. The budget is fully adjustable in the popup before every scan,
-and both your chosen budget and Google's documented 2MB figure are shown
-together in every report.
+## Why this matters
 
-## Features
+Google's own documentation says Googlebot only reads the first 2MB of a page, and stops there. If your page is bigger than that, the rest simply never gets crawled or indexed. Most site owners have no idea how close their pages are to this limit. This tool measures the exact bytes a crawler would download, not the total weight of images and scripts a browser loads, and shows you which pages are at risk.
 
-| Feature | Details |
-|---|---|
-| No URL entry | Detects the site from whatever tab is active — click the icon and go |
-| Full-site scan | One click crawls up to **5,000 pages** on the current site |
-| Adjustable budget | Set any size threshold before scanning, in MB, remembered for next time |
-| Size breakdown | Every page sorted into under budget, approaching budget (80%+), or over budget |
-| Measured correctly | Sizes come from the raw HTTP response body, the same bytes a crawler reads, not total page weight including images and scripts |
-| Rendered-mode fallback | Falls back to a hidden tab (real JS execution) for client-rendered (SPA) pages that return no links on a plain fetch, so the crawl can still discover pages beyond them |
-| Anti-bot detection | Flags pages blocked by Cloudflare-style challenges separately, instead of silently miscounting them |
-| Runs in the background | Closing the popup does not stop a scan in progress |
-| Auto-saved progress | Saved to your browser every few seconds, so nothing is lost |
-| Resume after closing the browser | Reopen the popup and resume, or export what was scanned so far |
-| Per-category export | A download icon on each row exports just that category as `.xlsx` |
-| Excel export | Export everything as a real `.xlsx` file |
-| PDF report | A styled summary report (stat cards, a size-breakdown chart, and the largest pages found) as a real `.pdf` file |
-| Privacy | Everything stays in your browser's local storage, nothing is sent to any server |
-| Cost | 100% free, no account, no activation code |
+## What it does
 
-## Install
+- Detects your site automatically from the tab you have open, no typing needed
+- Scans your whole site in one click, up to 5,000 pages
+- Lets you set your own size budget in MB before scanning
+- Sorts every page into under budget, approaching budget, or over budget
+- Measures the real response size, the same bytes a search engine actually downloads
+- Handles JavaScript heavy pages by opening a hidden tab when needed, without changing how size is measured
+- Flags pages blocked by anti bot systems separately, so they do not throw off your numbers
+- Keeps running in the background even if you close the popup
+- Saves progress automatically, and lets you resume after closing the browser
+- Lets you export just one category or everything as an Excel file
+- Lets you export a full PDF report
+- Everything stays in your browser. Nothing is sent to any server
+- Completely free, no account and no activation code needed
 
-1. Unzip the folder somewhere on your computer.
-2. Open `chrome://extensions` in Chrome.
-3. Turn on **Developer mode** (top-right toggle).
-4. Click **Load unpacked** and select the unzipped `two-mb-crawl-limit-monitor` folder.
-5. The icon appears in your toolbar, pin it for easy access.
+## How to install
 
-## How it works
+1. Download the folder and unzip it on your computer.
+2. Open a new tab in Chrome and go to chrome://extensions
+3. Turn on Developer mode, the toggle is in the top right corner.
+4. Click Load unpacked and select the two-mb-crawl-limit-monitor folder.
+5. The icon will show up in your toolbar. Pin it so it is easy to find.
 
-- **Crawl**: a background script fetches pages starting from the homepage and
-  follows internal links outward (breadth-first, same origin only), up to
-  5,000 pages, 8 fetches in parallel. Fetches use the browser's own cookies
-  (`credentials: 'include'`), so a site that's already let you past a
-  Cloudflare check in this browser generally lets the crawl through too.
-- **Measurement**: for every page that loads successfully, the raw response
-  body is measured in bytes (UTF-8 encoded, matching what actually travels
-  over HTTP) and compared against your configured budget. A page at or above
-  the budget is "over"; a page at 80% or more of the budget is "approaching";
-  everything else is "under."
-- **robots.txt is respected before fetching, not after**: a URL disallowed by
-  robots.txt is never fetched at all, the same way Googlebot would skip it,
-  so a huge disallowed page never distorts the report or wastes scan budget.
-- **Rendered-mode fallback**: if a page loads fine but yields zero `<a href>`
-  links, that usually means the content is client-rendered (a React/Vue shell
-  with an empty initial HTML payload). The scan opens that one URL in a
-  hidden, inactive tab, lets its JS actually run, reads the rendered DOM only
-  to keep discovering further links, and continues from there. The page's
-  measured *size* always comes from the original plain fetch, since that is
-  what a crawler actually downloads — capped at 500 pages per scan since
-  rendering is much heavier than a plain fetch.
-- **Anti-bot detection**: a `503` status paired with a `cloudflare` server
-  header, or a "Just a moment..." challenge page in the response body, is
-  flagged as blocked-by-anti-bot rather than folded into the size numbers.
-- **Export**: one download icon per category exports just that category's
-  URLs with their sizes; "export all" exports every measured page.
+## Good to know
 
-## Language
+- A normal scan covers up to 5,000 pages. Very large sites only get a partial map.
+- robots.txt is respected before a page is even fetched, so a huge blocked page never skews your results.
+- Pages that Google gives a bigger allowance to, like PDFs, get their own 64MB limit instead of 2MB.
 
-English only.
+## Support
+
+If you run into a bug or have a question, reach out through [github.com/mmrahmanbappi](https://github.com/mmrahmanbappi).
+
+## License
+
+All rights reserved. See [LICENSE](LICENSE). This software is proprietary. The source code may not be copied, modified, or shared without permission.
