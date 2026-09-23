@@ -1,17 +1,30 @@
 {
   "manifest_version": 3,
   "name": "Canonical Chain Tracer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Trace canonical tag chains across your site and catch loops before search engines do. Free, no account needed.",
-  "permissions": ["storage", "downloads", "tabs", "scripting"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "permissions": [
+    "storage",
+    "downloads",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.js"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
@@ -27,5 +40,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "homepage_url": "https://mmrahmanbappi.github.io/seo-chrome-extensions/canonical-chain-tracer/"
 }

@@ -44,7 +44,7 @@
         <input id="budget-input" type="number" min="1" step="0.1" value="2" />
         <span class="small muted">MB</span>
       </div>
-      <p class="small muted" id="budget-note">Google's own documentation confirms 2 MB is the actual hard crawl limit for HTML and other supported file types (PDFs get a separate 64 MB allowance). This default matches that exactly — change it above if you'd rather monitor against a stricter budget or any other value.</p>
+      <p class="small muted" id="budget-note">Google's own documentation confirms 2 MB is the actual hard crawl limit for HTML and other supported file types (PDFs get a separate 64 MB allowance). This default matches that exactly. Change it above if you want to monitor against a stricter budget or any other value.</p>
       <button id="btn-start-scan" class="primary">scan this site</button>
     </div>
 
@@ -70,7 +70,7 @@
     </div>
 
     <div id="state-paused" class="state" hidden>
-      <div class="banner banner-warn">scan paused — resume any time, nothing is lost.</div>
+      <div class="banner banner-warn">scan paused. Resume any time, nothing is lost.</div>
       <div class="mono small" id="paused-count"></div>
       <div class="btn-row">
         <button id="btn-resume-scan" class="accent-outline">resume scan</button>

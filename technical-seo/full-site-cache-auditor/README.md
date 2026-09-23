@@ -1,5 +1,7 @@
 # Full Site Cache Auditor
 
+Full guide and download: https://mmrahmanbappi.github.io/seo-chrome-extensions/full-site-cache-auditor/
+
 ![Full Site Cache Auditor screenshot](promo/linkedin-post.png)
 
 A free Chrome extension that runs 54 real checks on your site's caching, CDN, and DNS setup, and reports each one on its own.
@@ -27,7 +29,7 @@ The 54 checks cover several areas:
 
 ## How to install
 
-1. Download the folder and unzip it on your computer.
+1. [Download full-site-cache-auditor.zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/full-site-cache-auditor.zip) and unzip it on your computer.
 2. Open a new tab in Chrome and go to chrome://extensions
 3. Turn on Developer mode, the toggle is in the top right corner.
 4. Click Load unpacked and select the full-site-cache-auditor folder.

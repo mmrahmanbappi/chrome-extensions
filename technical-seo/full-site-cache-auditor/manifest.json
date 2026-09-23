@@ -1,10 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Full Site Cache Auditor",
-  "version": "1.0.0",
-  "description": "Runs 21 real cache, CDN, and DNS checks against a site: Cache-Control directives, CDN detection, edge cache hit ratio, provider-specific headers, DNS TTL, and more. Free, no account needed.",
-  "permissions": ["storage", "unlimitedStorage", "downloads", "tabs"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "version": "1.0.1",
+  "description": "Run 54 checks on caching, CDN and DNS, see exactly why a page is or is not cached, and export a PDF report. Free.",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,5 +28,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "homepage_url": "https://mmrahmanbappi.github.io/seo-chrome-extensions/full-site-cache-auditor/"
 }

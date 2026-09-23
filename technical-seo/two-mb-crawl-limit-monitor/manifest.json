@@ -1,10 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Two MB Crawl Limit Monitor",
-  "version": "1.0.0",
-  "description": "See which of your pages are approaching or over a crawl size budget, measured from the same bytes Googlebot downloads. Free, no account needed, up to 5,000 pages per scan.",
-  "permissions": ["storage", "unlimitedStorage", "downloads", "tabs", "scripting"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "version": "1.0.1",
+  "description": "See which pages come close to or pass Googlebot's 2MB crawl limit, measured in real bytes. Free, no account needed.",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "downloads",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,5 +29,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "homepage_url": "https://mmrahmanbappi.github.io/seo-chrome-extensions/two-mb-crawl-limit-monitor/"
 }

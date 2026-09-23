@@ -1,5 +1,7 @@
 # Click Depth Mapper
 
+Full guide and download: https://mmrahmanbappi.github.io/seo-chrome-extensions/click-depth-mapper/
+
 ![Click Depth Mapper screenshot](promo/linkedin-post.png)
 
 A free Chrome extension that shows how many clicks away any page is from your homepage.
@@ -25,7 +27,7 @@ The deeper a page sits from your homepage, the harder it is for search engines a
 
 ## How to install
 
-1. Download the folder and unzip it on your computer.
+1. [Download click-depth-mapper.zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/click-depth-mapper.zip) and unzip it on your computer.
 2. Open a new tab in Chrome and go to chrome://extensions
 3. Turn on Developer mode, the toggle is in the top right corner.
 4. Click Load unpacked and select the click-depth-mapper folder.

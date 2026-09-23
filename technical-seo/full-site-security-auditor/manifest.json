@@ -1,10 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Full Site Security Auditor",
-  "version": "1.0.0",
-  "description": "Runs 47 security, DNS, header, and CMS/framework checks against a site: exposed files, admin panels, missing headers, email spoofing risk, hidden spam, and more. Free, no account needed.",
-  "permissions": ["storage", "unlimitedStorage", "downloads", "tabs"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "version": "1.0.1",
+  "description": "Run 47 security, DNS and CMS checks, from headers and exposed files to SPF and DMARC. Free, and your data stays local.",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,5 +28,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "homepage_url": "https://mmrahmanbappi.github.io/seo-chrome-extensions/full-site-security-auditor/"
 }

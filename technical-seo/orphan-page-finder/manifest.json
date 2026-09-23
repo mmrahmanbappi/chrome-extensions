@@ -1,10 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Orphan Page Finder",
-  "version": "1.0.0",
-  "description": "Find pages your sitemap lists that no internal link actually leads to, plus pages that are only weakly linked. Free, no account needed, up to 5,000 pages per scan.",
-  "permissions": ["storage", "unlimitedStorage", "downloads", "tabs", "scripting"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "version": "1.0.1",
+  "description": "Find sitemap pages that no internal link reaches, plus weakly linked pages. Free, no account, up to 5,000 pages per scan.",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "downloads",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,5 +29,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "homepage_url": "https://mmrahmanbappi.github.io/seo-chrome-extensions/orphan-page-finder/"
 }

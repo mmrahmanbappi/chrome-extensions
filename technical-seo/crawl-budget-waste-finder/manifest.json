@@ -1,10 +1,19 @@
 {
   "manifest_version": 3,
   "name": "Crawl Budget Waste Finder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find faceted and parameter URLs wasting your crawl budget. Free, no account needed, up to 5,000 pages per scan.",
-  "permissions": ["storage", "unlimitedStorage", "downloads", "tabs", "scripting"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "downloads",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -20,5 +29,6 @@
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "homepage_url": "https://mmrahmanbappi.github.io/seo-chrome-extensions/crawl-budget-waste-finder/"
 }
