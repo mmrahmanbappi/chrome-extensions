@@ -196,6 +196,30 @@ header.top nav a.gh{border:1.5px solid var(--ink);border-radius:999px;padding:.3
 .card{border-radius:18px}
 ol.steps li::before{color:var(--mt-accink)}
 @media (max-width:760px){header.top nav a:not(.gh){display:none}}
+:root{--mt-soft:#f6f6f2;--blue:var(--green)}@media (prefers-color-scheme:dark){:root{--mt-soft:#1b1a1e}}
+.mthero{padding:28px 0 36px}.mthero h1{margin-top:14px!important;font-size:clamp(2.2rem,3.6vw,3.2rem)!important}
+.hgrid{display:grid;grid-template-columns:1.05fr 1.15fr .9fr;gap:26px;align-items:center;min-height:470px}
+.mtbadge{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--mt-soft);border:1px solid var(--line);border-radius:999px;padding:.25rem .7rem .25rem .3rem}
+.mtbadge b{background:#b23a0a;color:#fff;border-radius:999px;padding:.1rem .5rem}
+.stack{position:relative;height:440px;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.stack figure{position:absolute;margin:0;width:62%;aspect-ratio:16/10;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(23,21,24,.06),0 18px 40px -22px rgba(23,21,24,.35);border:1px solid var(--line);background:var(--card);animation:mtfloat 7s ease-in-out infinite}
+.stack figure img{width:100%;height:100%;object-fit:cover;object-position:top}
+.stack figure:nth-child(1){left:2%;top:4%;transform:rotate(-7deg);animation-delay:-1s}.stack figure:nth-child(2){right:0;top:0;transform:rotate(5deg);animation-delay:-3s}
+.stack figure:nth-child(3){left:18%;top:26%;transform:rotate(-1deg);z-index:3;width:70%;animation-delay:-2s}.stack figure:nth-child(4){left:0;top:52%;transform:rotate(4deg);animation-delay:-4s}
+.stack figure:nth-child(5){right:2%;top:48%;transform:rotate(-5deg);animation-delay:-5s}.stack figure:nth-child(6){left:24%;top:70%;transform:rotate(2deg);animation-delay:-6s}
+@keyframes mtfloat{50%{translate:0 -8px}}
+.mtside{display:flex;flex-direction:column;gap:16px}
+.mtcycle,.mtstat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px 17px}.mtcycle{box-shadow:0 18px 40px -26px rgba(23,21,24,.35)}
+.mtcycle .hd{display:flex;align-items:center;gap:11px}.mtcycle .hd i{width:36px;height:36px;border-radius:10px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.7rem;flex:none}
+.mtcycle small{display:block;color:var(--muted);font-size:.78rem}.mtcycle strong{color:var(--ink);font-size:.95rem;display:block;min-height:1.5em;transition:opacity .35s}
+.mtcycle ul{list-style:none;margin:12px 0 0;padding:0 0 0 47px;font-size:.9rem;display:flex;flex-direction:column;gap:7px}
+.mtcycle li:nth-child(1){opacity:.9}.mtcycle li:nth-child(2){opacity:.65}.mtcycle li:nth-child(3){opacity:.4}.mtcycle li:nth-child(4){opacity:.18}
+.mtstat{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}.mtstat small{color:var(--muted);font-size:.85rem;line-height:1.4}
+.mtstat b{display:block;font-size:2rem;color:var(--ink);letter-spacing:-.03em;line-height:1;text-align:right}.mtstat em{font-style:normal;font-size:.78rem;color:var(--blue);font-weight:600;display:block;text-align:right;margin-top:6px}
+.mtbig{font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.02;color:var(--ink);font-weight:560;letter-spacing:-.035em;margin:0}
+@media (max-width:1060px){.hgrid{grid-template-columns:1fr 1fr}.mtside{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:start}.mtbig{grid-column:1/-1}}
+@media (max-width:760px){.hgrid{grid-template-columns:1fr;min-height:0}.stack{height:280px;order:2}.mtside{grid-template-columns:1fr;order:3}}
+@media (prefers-reduced-motion:reduce){.stack figure{animation:none}}
 """
 
 
@@ -247,6 +271,8 @@ def page(title, desc, path, og, schema, body):
 <p>Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>, technical SEO consultant and web developer.</p>
 <p>Free and open source under the MIT license. <a href="{REPO}">Source on GitHub</a> &nbsp; <a href="https://mmrahmanbappi.github.io/">More free projects</a></p>
 </div></footer>
+<script>(function(){{var cur=document.getElementById('mtcur'),nx=document.getElementById('mtnx');if(!cur||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var items=JSON.parse(cur.dataset.items),i=0;
+setInterval(function(){{i=(i+1)%items.length;cur.style.opacity=0;setTimeout(function(){{cur.textContent=items[i];cur.style.opacity=1;nx.innerHTML='';for(var k=1;k<5;k++){{var li=document.createElement('li');li.textContent=items[(i+k)%items.length];nx.appendChild(li);}}}},350);}},2600);}})();</script>
 </body>
 </html>
 """
@@ -405,18 +431,20 @@ def home(tools):
         {"@type": "FAQPage", "@id": BASE + "/#faq", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in HOME_FAQ]},
     ]}
-    body = f"""<section class="hero"><div class="wrap hero-grid">
-<div>
+    _names = [t["name"] for t in tools]
+    _figs = "".join(f'<figure><img src="{BASE}/images/{t['slug']}-800.webp" alt="" width="800" height="500" loading="lazy"></figure>' for t in tools[:6])
+    _nx = "".join(f"<li>{esc(x)}</li>" for x in _names[1:5])
+    body = f"""<section class="hero mthero"><div class="wrap hgrid">
+<div><span class="mtbadge"><b>Free</b>SEO Chrome extensions</span>
 <h1>Free SEO Chrome extensions for technical audits</h1>
-<p class="lead">Seven small tools that each check one part of your site: orphan pages, click depth, canonical chains, crawl budget, page size, caching and security. They show you exactly which pages need fixing, and let you export the results to Excel or PDF.</p>
+<p class="lead">Seven small tools that each check one part of your site: orphan pages, click depth, canonical chains, crawl budget, page size, caching and security. Export the results to Excel or PDF.</p>
 <div class="actions"><a class="btn main" href="{DL}/chrome-extensions-all.zip">Download all seven (zip)</a><a class="btn alt" href="#tools">Choose one tool</a></div>
 <p class="small">Free for Chrome, Edge and Brave. No account, no subscription.</p>
 </div>
-<figure>
-<picture><source type="image/webp" srcset="{BASE}/images/orphan-page-finder-800.webp 800w, {BASE}/images/orphan-page-finder-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 600px">
-<img src="{BASE}/images/orphan-page-finder-1200.jpg" alt="Orphan Page Finder showing orphan, weakly linked and well linked pages" width="1200" height="{img_h('orphan-page-finder')}" fetchpriority="high"></picture>
-<figcaption>Orphan Page Finder, one of the seven tools, after a scan.</figcaption>
-</figure>
+<div class="stack" aria-hidden="true">{_figs}</div>
+<div class="mtside"><div class="mtcycle"><div class="hd"><i aria-hidden="true">SEO</i><div><small>Tools in the set</small><strong id="mtcur" data-items="{esc(json.dumps(_names))}">{esc(_names[0])}</strong></div></div><ul id="mtnx" aria-hidden="true">{_nx}</ul></div>
+<div class="mtstat"><small>Free extensions<br>for technical SEO</small><div><b>{len(tools)}</b><em>Chrome, Edge, Brave</em></div></div>
+<p class="mtbig">Find it. Fix it. Export it.</p></div>
 </div></section>
 
 <section class="band alt" id="tools"><div class="wrap">

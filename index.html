@@ -176,18 +176,17 @@
 <nav aria-label="Main"><a href="https://mmrahmanbappi.github.io/chrome-extensions/#tools">All tools</a><a href="https://mmrahmanbappi.github.io/chrome-extensions/#install">How to install</a><a href="https://mmrahmanbappi.github.io/chrome-extensions/#faq">FAQ</a><a href="https://mmrahmanbappi.github.io/">All projects</a><a class="gh" href="https://github.com/mmrahmanbappi/chrome-extensions">GitHub</a></nav>
 </div></header>
 <main id="main">
-<section class="hero"><div class="wrap hero-grid">
-<div>
+<section class="hero mthero"><div class="wrap hgrid">
+<div><span class="mtbadge"><b>Free</b>SEO Chrome extensions</span>
 <h1>Free SEO Chrome extensions for technical audits</h1>
-<p class="lead">Seven small tools that each check one part of your site: orphan pages, click depth, canonical chains, crawl budget, page size, caching and security. They show you exactly which pages need fixing, and let you export the results to Excel or PDF.</p>
+<p class="lead">Seven small tools that each check one part of your site: orphan pages, click depth, canonical chains, crawl budget, page size, caching and security. Export the results to Excel or PDF.</p>
 <div class="actions"><a class="btn main" href="https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/chrome-extensions-all.zip">Download all seven (zip)</a><a class="btn alt" href="#tools">Choose one tool</a></div>
 <p class="small">Free for Chrome, Edge and Brave. No account, no subscription.</p>
 </div>
-<figure>
-<picture><source type="image/webp" srcset="https://mmrahmanbappi.github.io/chrome-extensions/images/orphan-page-finder-800.webp 800w, https://mmrahmanbappi.github.io/chrome-extensions/images/orphan-page-finder-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 600px">
-<img src="https://mmrahmanbappi.github.io/chrome-extensions/images/orphan-page-finder-1200.jpg" alt="Orphan Page Finder showing orphan, weakly linked and well linked pages" width="1200" height="628" fetchpriority="high"></picture>
-<figcaption>Orphan Page Finder, one of the seven tools, after a scan.</figcaption>
-</figure>
+<div class="stack" aria-hidden="true"><figure><img src="https://mmrahmanbappi.github.io/chrome-extensions/images/orphan-page-finder-800.webp" alt="" width="800" height="500" loading="lazy"></figure><figure><img src="https://mmrahmanbappi.github.io/chrome-extensions/images/click-depth-mapper-800.webp" alt="" width="800" height="500" loading="lazy"></figure><figure><img src="https://mmrahmanbappi.github.io/chrome-extensions/images/canonical-chain-tracer-800.webp" alt="" width="800" height="500" loading="lazy"></figure><figure><img src="https://mmrahmanbappi.github.io/chrome-extensions/images/crawl-budget-waste-finder-800.webp" alt="" width="800" height="500" loading="lazy"></figure><figure><img src="https://mmrahmanbappi.github.io/chrome-extensions/images/two-mb-crawl-limit-monitor-800.webp" alt="" width="800" height="500" loading="lazy"></figure><figure><img src="https://mmrahmanbappi.github.io/chrome-extensions/images/full-site-cache-auditor-800.webp" alt="" width="800" height="500" loading="lazy"></figure></div>
+<div class="mtside"><div class="mtcycle"><div class="hd"><i aria-hidden="true">SEO</i><div><small>Tools in the set</small><strong id="mtcur" data-items="[&quot;Orphan Page Finder&quot;, &quot;Click Depth Mapper&quot;, &quot;Canonical Chain Tracer&quot;, &quot;Crawl Budget Waste Finder&quot;, &quot;Two MB Crawl Limit Monitor&quot;, &quot;Full Site Cache Auditor&quot;, &quot;Full Site Security Auditor&quot;]">Orphan Page Finder</strong></div></div><ul id="mtnx" aria-hidden="true"><li>Click Depth Mapper</li><li>Canonical Chain Tracer</li><li>Crawl Budget Waste Finder</li><li>Two MB Crawl Limit Monitor</li></ul></div>
+<div class="mtstat"><small>Free extensions<br>for technical SEO</small><div><b>7</b><em>Chrome, Edge, Brave</em></div></div>
+<p class="mtbig">Find it. Fix it. Export it.</p></div>
 </div></section>
 
 <section class="band alt" id="tools"><div class="wrap">
@@ -237,5 +236,7 @@
 <p>Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>, technical SEO consultant and web developer.</p>
 <p>Free and open source under the MIT license. <a href="https://github.com/mmrahmanbappi/chrome-extensions">Source on GitHub</a> &nbsp; <a href="https://mmrahmanbappi.github.io/">More free projects</a></p>
 </div></footer>
+<script>(function(){var cur=document.getElementById('mtcur'),nx=document.getElementById('mtnx');if(!cur||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var items=JSON.parse(cur.dataset.items),i=0;
+setInterval(function(){i=(i+1)%items.length;cur.style.opacity=0;setTimeout(function(){cur.textContent=items[i];cur.style.opacity=1;nx.innerHTML='';for(var k=1;k<5;k++){var li=document.createElement('li');li.textContent=items[(i+k)%items.length];nx.appendChild(li);}},350);},2600);})();</script>
 </body>
 </html>
