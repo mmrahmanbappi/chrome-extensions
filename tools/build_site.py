@@ -257,6 +257,15 @@ def page(title, desc, path, og, schema, body):
 <script type="application/ld+json">
 {json.dumps(schema, indent=1, ensure_ascii=False)}
 </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8QGLFQD12"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D8QGLFQD12');
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
