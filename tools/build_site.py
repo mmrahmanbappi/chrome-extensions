@@ -180,6 +180,22 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 footer p{margin:0}
 @media (max-width:860px){.hero-grid,.two{grid-template-columns:1fr;gap:2rem}}
+
+/* Shared look with mmrahmanbappi.github.io */
+:root{--bg:#eeeeea;--card:#fff;--ink:#171518;--text:#403b42;--muted:#5f5d61;--line:#d9d8d2;--green:#b23a0a;--green-soft:#f6e3d9;--max:78rem;--mt-accink:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141316;--card:#222126;--ink:#f2f1ed;--text:#d7d5d9;--muted:#a3a1a6;--line:#302f35;--green:#ff7b4f;--green-soft:#3a2219;--mt-accink:#141316;color-scheme:dark}}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.03rem;line-height:1.65}
+a{color:var(--ink)}
+h1,h2,h3{letter-spacing:-.035em;line-height:1.05}h1{font-weight:560}h2,h3{font-weight:600}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.brand i{width:2.1rem;height:2.1rem;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-style:normal;font-size:.7rem;font-weight:800;flex:none}
+header.top nav{align-items:center}header.top nav a{color:var(--muted);text-decoration:none}header.top nav a:hover{color:var(--ink)}
+header.top nav a.gh{border:1.5px solid var(--ink);border-radius:999px;padding:.35rem 1rem;color:var(--ink);font-weight:600}
+.btn{border-radius:999px!important;font-weight:600}.btn.main{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--bg)!important}
+.card{border-radius:18px}
+ol.steps li::before{color:var(--mt-accink)}
+@media (max-width:760px){header.top nav a:not(.gh){display:none}}
 """
 
 
@@ -211,6 +227,8 @@ def page(title, desc, path, og, schema, body):
 <meta name="twitter:description" content="{esc(desc)}">
 <meta name="twitter:image" content="{BASE}/images/og/{og}.jpg">
 <link rel="icon" href="{BASE}/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="{BASE}/site.css">
 <script type="application/ld+json">
 {json.dumps(schema, indent=1, ensure_ascii=False)}
@@ -219,15 +237,15 @@ def page(title, desc, path, og, schema, body):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="wrap">
-<a class="brand" href="{BASE}/">Free SEO Chrome Extensions</a>
-<nav aria-label="Main"><a href="{BASE}/#tools">All tools</a><a href="{BASE}/#install">How to install</a><a href="{BASE}/#faq">FAQ</a><a href="{REPO}">GitHub</a></nav>
+<a class="brand" href="{BASE}/"><i aria-hidden="true">SEO</i>Free SEO Chrome Extensions</a>
+<nav aria-label="Main"><a href="{BASE}/#tools">All tools</a><a href="{BASE}/#install">How to install</a><a href="{BASE}/#faq">FAQ</a><a href="https://mmrahmanbappi.github.io/">All projects</a><a class="gh" href="{REPO}">GitHub</a></nav>
 </div></header>
 <main id="main">
 {body}
 </main>
 <footer><div class="wrap">
 <p>Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>, technical SEO consultant and web developer.</p>
-<p>Free and open source under the MIT license. <a href="{REPO}">Source on GitHub</a></p>
+<p>Free and open source under the MIT license. <a href="{REPO}">Source on GitHub</a> &nbsp; <a href="https://mmrahmanbappi.github.io/">More free projects</a></p>
 </div></footer>
 </body>
 </html>
