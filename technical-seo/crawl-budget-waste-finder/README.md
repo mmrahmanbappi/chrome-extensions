@@ -44,4 +44,4 @@ If you run into a bug or have a question, reach out through [github.com/mmrahman
 
 ## License
 
-All rights reserved. See [LICENSE](LICENSE). This software is proprietary. The source code may not be copied, modified, or shared without permission.
+MIT. Free to use, change and share, in personal and commercial projects. See [LICENSE](LICENSE).

@@ -53,4 +53,4 @@ python3 tools/build_site.py
 
 ## License
 
-Each tool has its own LICENSE file. The tools are free to download and use.
+MIT. Every tool is free to use, change and share, in personal and commercial projects. See [LICENSE](LICENSE). Each tool folder also carries its own copy of the license.

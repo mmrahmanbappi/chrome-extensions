@@ -227,7 +227,7 @@ def page(title, desc, path, og, schema, body):
 </main>
 <footer><div class="wrap">
 <p>Made by <a href="https://mmseo.app/">MM Rahman Bappi</a>, technical SEO consultant and web developer.</p>
-<p>Free to download and use. <a href="{REPO}">Source on GitHub</a></p>
+<p>Free and open source under the MIT license. <a href="{REPO}">Source on GitHub</a></p>
 </div></footer>
 </body>
 </html>
@@ -254,7 +254,7 @@ def install_steps(zipname, folder):
 
 def faq_for(t):
     items = [
-        (f"Is {t['name']} free?", "Yes. It is free to download and use. You do not need an account, a subscription or an activation code."),
+        (f"Is {t['name']} free?", "Yes. It is free to download and use, and the code is open source under the MIT license. You do not need an account, a subscription or an activation code."),
         ("Where are my results stored?", "Your scan results and settings are saved in your own browser. The extension does not ask you to sign in, and you can delete everything by removing the extension."),
         ("Which browsers does it work in?", "Google Chrome, and other browsers built on Chromium such as Microsoft Edge and Brave."),
         (t["q"], t["a"]),
@@ -365,7 +365,7 @@ def card(t):
 
 
 HOME_FAQ = [
-    ("Are these extensions really free?", "Yes. All seven are free to download and use, with no account, no subscription and no activation code."),
+    ("Are these extensions really free?", "Yes. All seven are free to download and use and open source under the MIT license, with no account, no subscription and no activation code."),
     ("Do I need to be an SEO expert?", "No. Each tool explains what it found in plain words and shows which pages need attention first. You can also export Excel and PDF reports to share with a developer."),
     ("Where does my data go?", "Scan results and settings are saved in your own browser. The extensions do not ask you to sign in."),
     ("Which browsers are supported?", "Google Chrome, and browsers built on Chromium such as Microsoft Edge and Brave."),
