@@ -4,21 +4,21 @@
 
 Seven free Chrome extensions for technical SEO. Each one checks one part of your site and shows you exactly which pages need fixing. You can export every result to Excel or PDF.
 
-Website: https://mmrahmanbappi.github.io/seo-chrome-extensions/
+Website: https://mmrahmanbappi.github.io/chrome-extensions/
 
 ## The tools
 
 | Tool | What it does | Get it |
 |---|---|---|
-| [Orphan Page Finder](https://mmrahmanbappi.github.io/seo-chrome-extensions/orphan-page-finder/) | Finds pages in your sitemap that no internal link points to. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/orphan-page-finder.zip) |
-| [Click Depth Mapper](https://mmrahmanbappi.github.io/seo-chrome-extensions/click-depth-mapper/) | Shows how many clicks each page is from your homepage. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/click-depth-mapper.zip) |
-| [Canonical Chain Tracer](https://mmrahmanbappi.github.io/seo-chrome-extensions/canonical-chain-tracer/) | Follows canonical tags and finds chains and loops. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/canonical-chain-tracer.zip) |
-| [Crawl Budget Waste Finder](https://mmrahmanbappi.github.io/seo-chrome-extensions/crawl-budget-waste-finder/) | Finds filter, tracking and session URLs that waste crawl budget. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/crawl-budget-waste-finder.zip) |
-| [Two MB Crawl Limit Monitor](https://mmrahmanbappi.github.io/seo-chrome-extensions/two-mb-crawl-limit-monitor/) | Finds pages close to or over Googlebot's 2MB crawl limit. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/two-mb-crawl-limit-monitor.zip) |
-| [Full Site Cache Auditor](https://mmrahmanbappi.github.io/seo-chrome-extensions/full-site-cache-auditor/) | Runs 54 checks on caching, CDN and DNS. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/full-site-cache-auditor.zip) |
-| [Full Site Security Auditor](https://mmrahmanbappi.github.io/seo-chrome-extensions/full-site-security-auditor/) | Runs 47 security, DNS and CMS checks. | [Download](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/full-site-security-auditor.zip) |
+| [Orphan Page Finder](https://mmrahmanbappi.github.io/chrome-extensions/orphan-page-finder/) | Finds pages in your sitemap that no internal link points to. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/orphan-page-finder.zip) |
+| [Click Depth Mapper](https://mmrahmanbappi.github.io/chrome-extensions/click-depth-mapper/) | Shows how many clicks each page is from your homepage. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/click-depth-mapper.zip) |
+| [Canonical Chain Tracer](https://mmrahmanbappi.github.io/chrome-extensions/canonical-chain-tracer/) | Follows canonical tags and finds chains and loops. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/canonical-chain-tracer.zip) |
+| [Crawl Budget Waste Finder](https://mmrahmanbappi.github.io/chrome-extensions/crawl-budget-waste-finder/) | Finds filter, tracking and session URLs that waste crawl budget. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/crawl-budget-waste-finder.zip) |
+| [Two MB Crawl Limit Monitor](https://mmrahmanbappi.github.io/chrome-extensions/two-mb-crawl-limit-monitor/) | Finds pages close to or over Googlebot's 2MB crawl limit. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/two-mb-crawl-limit-monitor.zip) |
+| [Full Site Cache Auditor](https://mmrahmanbappi.github.io/chrome-extensions/full-site-cache-auditor/) | Runs 54 checks on caching, CDN and DNS. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/full-site-cache-auditor.zip) |
+| [Full Site Security Auditor](https://mmrahmanbappi.github.io/chrome-extensions/full-site-security-auditor/) | Runs 47 security, DNS and CMS checks. | [Download](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/full-site-security-auditor.zip) |
 
-Want all seven? [Download them in one zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/seo-chrome-extensions-all.zip).
+Want all seven? [Download them in one zip](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/chrome-extensions-all.zip).
 
 ## How to install
 
@@ -36,7 +36,7 @@ Want all seven? [Download them in one zip](https://github.com/mmrahmanbappi/seo-
 
 ## Found a problem?
 
-[Open an issue](https://github.com/mmrahmanbappi/seo-chrome-extensions/issues) and describe what happened, which tool you used, and your browser version.
+[Open an issue](https://github.com/mmrahmanbappi/chrome-extensions/issues) and describe what happened, which tool you used, and your browser version.
 
 ## About
 

@@ -1,6 +1,6 @@
 # Crawl Budget Waste Finder
 
-Full guide and download: https://mmrahmanbappi.github.io/seo-chrome-extensions/crawl-budget-waste-finder/
+Full guide and download: https://mmrahmanbappi.github.io/chrome-extensions/crawl-budget-waste-finder/
 
 ![Crawl Budget Waste Finder screenshot](promo/linkedin-post.png)
 
@@ -28,7 +28,7 @@ Search engines only spend so much time crawling your site. If a lot of that time
 
 ## How to install
 
-1. [Download crawl-budget-waste-finder.zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/crawl-budget-waste-finder.zip) and unzip it on your computer.
+1. [Download crawl-budget-waste-finder.zip](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/crawl-budget-waste-finder.zip) and unzip it on your computer.
 2. Open a new tab in Chrome and go to chrome://extensions
 3. Turn on Developer mode, the toggle is in the top right corner.
 4. Click Load unpacked and select the crawl-budget-waste-finder folder.

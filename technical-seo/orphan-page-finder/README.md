@@ -1,6 +1,6 @@
 # Orphan Page Finder
 
-Full guide and download: https://mmrahmanbappi.github.io/seo-chrome-extensions/orphan-page-finder/
+Full guide and download: https://mmrahmanbappi.github.io/chrome-extensions/orphan-page-finder/
 
 ![Orphan Page Finder screenshot](promo/linkedin-post.png)
 
@@ -29,7 +29,7 @@ A page can exist and be listed in your sitemap, yet have no internal link pointi
 
 ## How to install
 
-1. [Download orphan-page-finder.zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/orphan-page-finder.zip) and unzip it on your computer.
+1. [Download orphan-page-finder.zip](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/orphan-page-finder.zip) and unzip it on your computer.
 2. Open a new tab in Chrome and go to chrome://extensions
 3. Turn on Developer mode, the toggle is in the top right corner.
 4. Click Load unpacked and select the orphan-page-finder folder.

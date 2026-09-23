@@ -1,6 +1,6 @@
 # Two MB Crawl Limit Monitor
 
-Full guide and download: https://mmrahmanbappi.github.io/seo-chrome-extensions/two-mb-crawl-limit-monitor/
+Full guide and download: https://mmrahmanbappi.github.io/chrome-extensions/two-mb-crawl-limit-monitor/
 
 ![Two MB Crawl Limit Monitor screenshot](promo/linkedin-post.png)
 
@@ -28,7 +28,7 @@ Google's own documentation says Googlebot only reads the first 2MB of a page, an
 
 ## How to install
 
-1. [Download two-mb-crawl-limit-monitor.zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/two-mb-crawl-limit-monitor.zip) and unzip it on your computer.
+1. [Download two-mb-crawl-limit-monitor.zip](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/two-mb-crawl-limit-monitor.zip) and unzip it on your computer.
 2. Open a new tab in Chrome and go to chrome://extensions
 3. Turn on Developer mode, the toggle is in the top right corner.
 4. Click Load unpacked and select the two-mb-crawl-limit-monitor folder.

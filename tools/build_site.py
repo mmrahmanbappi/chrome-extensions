@@ -15,8 +15,8 @@ from datetime import date
 
 import markdown
 
-BASE = "https://mmrahmanbappi.github.io/seo-chrome-extensions"
-REPO = "https://github.com/mmrahmanbappi/seo-chrome-extensions"
+BASE = "https://mmrahmanbappi.github.io/chrome-extensions"
+REPO = "https://github.com/mmrahmanbappi/chrome-extensions"
 DL = REPO + "/releases/latest/download"
 AUTHOR = {
     "@type": "Person",
@@ -391,7 +391,7 @@ def home(tools):
 <div>
 <h1>Free SEO Chrome extensions for technical audits</h1>
 <p class="lead">Seven small tools that each check one part of your site: orphan pages, click depth, canonical chains, crawl budget, page size, caching and security. They show you exactly which pages need fixing, and let you export the results to Excel or PDF.</p>
-<div class="actions"><a class="btn main" href="{DL}/seo-chrome-extensions-all.zip">Download all seven (zip)</a><a class="btn alt" href="#tools">Choose one tool</a></div>
+<div class="actions"><a class="btn main" href="{DL}/chrome-extensions-all.zip">Download all seven (zip)</a><a class="btn alt" href="#tools">Choose one tool</a></div>
 <p class="small">Free for Chrome, Edge and Brave. No account, no subscription.</p>
 </div>
 <figure>
@@ -423,7 +423,7 @@ def home(tools):
 <section class="band alt" id="install"><div class="wrap narrow">
 <h2>How to install</h2>
 <p>The steps are the same for every tool, and take about a minute.</p>
-{install_steps('seo-chrome-extensions-all.zip', None)}
+{install_steps('chrome-extensions-all.zip', None)}
 <p class="note" style="margin-top:1.5rem">Developer mode only means Chrome lets you load an extension from a folder on your computer. It does not change anything else in your browser.</p>
 </div></section>
 

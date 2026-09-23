@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mmrahmanbappi.github.io/seo-chrome-extensions/sitemap.xml
+Sitemap: https://mmrahmanbappi.github.io/chrome-extensions/sitemap.xml

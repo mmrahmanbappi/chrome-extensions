@@ -1,6 +1,6 @@
 # Canonical Chain Tracer
 
-Full guide and download: https://mmrahmanbappi.github.io/seo-chrome-extensions/canonical-chain-tracer/
+Full guide and download: https://mmrahmanbappi.github.io/chrome-extensions/canonical-chain-tracer/
 
 ![Canonical Chain Tracer screenshot](promo/linkedin-post.png)
 
@@ -24,7 +24,7 @@ A canonical tag should point straight to the real version of a page. Sometimes i
 
 ## How to install
 
-1. [Download canonical-chain-tracer.zip](https://github.com/mmrahmanbappi/seo-chrome-extensions/releases/latest/download/canonical-chain-tracer.zip) and unzip it on your computer.
+1. [Download canonical-chain-tracer.zip](https://github.com/mmrahmanbappi/chrome-extensions/releases/latest/download/canonical-chain-tracer.zip) and unzip it on your computer.
 2. Open a new tab in Chrome and go to chrome://extensions
 3. Turn on Developer mode, the toggle is in the top right corner.
 4. Click Load unpacked and select the canonical-chain-tracer folder.
